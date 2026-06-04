@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meme World</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+    margin: 0;
+}
+
+header{
+    background: #ff9800;
+    color: white;
+    padding: 20px;
+}
+
+.meme{
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+button{
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>😂 Meme World 😂</h1>
+    <p>Daily Fun and Entertainment</p>
+</header>
+
+<div class="meme">
+    <h2>Student Life Meme</h2>
+    <p id="memeText">
+        When the teacher says "This will come in the exam" 😱
+    </p>
+</div>
+
+<button onclick="changeMeme()">Next Meme</button>
+
+<script>
+const memes = [
+    "When the teacher says 'This will come in the exam' 😱",
+    "Me opening the book one day before exam 📚😂",
+    "WiFi disconnects during online class 😭",
+    "When assignment deadline is tomorrow 😨",
+    "After submitting the exam and remembering all answers 🤦"
+];
+
+let index = 0;
+
+function changeMeme(){
+    index = (index + 1) % memes.length;
+    document.getElementById("memeText").innerText = memes[index];
+}
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCiuvFvZCclp4h6ZbhaOAD8G8OJnd-gcsk",
+  authDomain: "myfirstproject-4e4fb.firebaseapp.com",
+  projectId: "myfirstproject-4e4fb",
+  storageBucket: "myfirstproject-4e4fb.firebasestorage.app",
+  messagingSenderId: "843311065157",
+  appId: "1:843311065157:web:0a92cef5638b530f211b2c"
+};
+
+const app = initializeApp(firebaseConfig);
+
+console.log("Firebase Connected Successfully!");
+</script>
+
+</body>
+</html>
